@@ -1,0 +1,60 @@
+INICIAR JUEGO
+  Crear tablero con 2 filas y 6 pozos por fila
+  Asignar 1 almacén para cada jugador (a la derecha de cada fila)
+  Colocar 4 semillas en cada pozo
+
+  Definir jugador_actual = 1
+  Definir jugador_oponente = 2
+
+  MIENTRAS no haya un ganador
+    Mostrar tablero
+
+    Solicitar al jugador_actual que elija un pozo (1 a 6) que no esté vacío
+
+    SI pozo elegido es válido ENTONCES
+      Recoger todas las semillas del pozo elegido
+      pozo_actual = pozo elegido
+      
+      MIENTRAS haya semillas por repartir
+        pozo_actual = siguiente_pozo(pozo_actual)
+
+        SI pozo_actual NO es el almacén del oponente ENTONCES
+          Colocar 1 semilla en pozo_actual
+          Reducir contador de semillas en 1
+        FIN SI
+
+      FIN MIENTRAS
+
+      SI el último pozo_actual está vacío Y pertenece a jugador_actual ENTONCES
+        Capturar semillas del pozo opuesto y moverlas al almacén de jugador_actual
+      FIN SI
+
+      SI el último pozo_actual es el almacén de jugador_actual ENTONCES
+        jugador_actual mantiene el turno
+      SINO
+        Cambiar de turno:
+          jugador_actual = jugador_oponente
+          jugador_oponente = jugador_actual
+      FIN SI
+
+    SINO
+      Mostrar "Movimiento no válido, intenta de nuevo"
+    FIN SI
+    
+    Verificar si todos los pozos de una fila están vacíos
+      SI una fila está vacía ENTONCES
+        Mover todas las semillas restantes al almacén del jugador correspondiente
+        FIN DEL JUEGO
+      FIN SI
+  FIN MIENTRAS
+
+  Determinar ganador:
+    SI semillas en almacén de jugador 1 > semillas en almacén de jugador 2 ENTONCES
+      Mostrar "Jugador 1 gana"
+    SINO SI semillas en almacén de jugador 2 > semillas en almacén de jugador 1 ENTONCES
+      Mostrar "Jugador 2 gana"
+    SINO
+      Mostrar "Empate"
+    FIN SI
+
+FIN JUEGO
