@@ -63,7 +63,7 @@ class JuegoMancala:
             self.tablero.finalizar_juego()
             self.tablero.mostrar()
             
-            print("\n🎉 Juego terminado.")
+            print("\n Juego terminado.")
             print(f"Jugador 1 almacén: {self.tablero.obtener_almacen(1)}")
             print(f"Jugador 2 almacén: {self.tablero.obtener_almacen(2)}")
             
