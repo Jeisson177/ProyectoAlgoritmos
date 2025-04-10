@@ -68,11 +68,11 @@ class JuegoMancala:
             print(f"Jugador 2 almacén: {self.tablero.obtener_almacen(2)}")
             
             if self.tablero.obtener_almacen(1) > self.tablero.obtener_almacen(2):
-                print("🏆 ¡Jugador 1 gana!")
+                print("¡Jugador 1 gana!")
             elif self.tablero.obtener_almacen(1) < self.tablero.obtener_almacen(2):
-                print("🏆 ¡Jugador 2 gana!")
+                print("¡Jugador 2 gana!")
             else:
-                print("🤝 ¡Es un empate!")
+                print("¡Es un empate!")
             
             return True
         return False
