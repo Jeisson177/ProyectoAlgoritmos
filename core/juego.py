@@ -6,10 +6,21 @@ class JuegoMancala:
         self.tablero = Tablero()
         self.jugador_actual = 1
         self.jugadores = {
-            1: Jugador(1),
-            2: Jugador(2)
+            1: Jugador(1, 'humano'),  # Siempre humano
+            2: self._crear_jugador_automatico()  # Pregunta si es automático
         }
     
+    def _crear_jugador_automatico(self):
+        while True:
+            respuesta = input("¿El contrincante (Jugador 2) será automático? (s/n): ").lower()
+            if respuesta == 's':
+                return Jugador(2, 'automático')
+            elif respuesta == 'n':
+                return Jugador(2, 'humano')
+            else:
+                print("⚠️ Error: Ingresa 's' (sí) o 'n' (no).")
+    
+    # --- Resto del código idéntico a tu primera entrega ---
     def mover_semillas(self, jugador, pozo):
         semillas = self.tablero.vaciar_pozo(jugador, pozo)
         posicion_actual = pozo

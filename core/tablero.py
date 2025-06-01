@@ -1,7 +1,7 @@
 class Tablero:
     def __init__(self):
         self.jugadores = {
-            "jugador1": [4, 4, 4, 4, 4, 4, 0],
+            "jugador1": [4, 4, 4, 4, 4, 4, 0],  # Pozos 0-5, almacén 6
             "jugador2": [4, 4, 4, 4, 4, 4, 0]
         }
     
