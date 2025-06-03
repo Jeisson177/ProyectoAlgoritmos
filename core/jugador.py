@@ -24,7 +24,7 @@ class Jugador:
                 print("⚠️ Error: Por favor, ingresa un número válido (1-6).")
     
     def _elegir_pozo_automatico(self, tablero):
-        # Estrategia simple: elige el pozo con más semillas
+        # Elige el pozo con más semillas
         max_semillas = -1
         mejor_pozo = 0
         for pozo in range(6):
